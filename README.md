@@ -5,6 +5,7 @@ This repository contains the database schemas and SQL code for the CP363 Banking
 ## Repository Structure
 
 - `banking_schemaA4.sql`: Assignment 4 - Initial database schema with tables, sample data, and queries
+- `banking_schema_A4.1.sql`: Assignment 4.1 - Extended schema with additional test data and complex queries
 - Future assignments will be added as separate SQL files (e.g., `banking_schemaA5.sql`)
 
 ## Getting Started
