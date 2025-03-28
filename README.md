@@ -1,6 +1,23 @@
-# Banking System GUI Application
+# CP363 Banking System Project
 
-This is a Python-based GUI application for managing a banking system. The application provides a user-friendly interface for managing customers, accounts, transactions, loans, and generating reports.
+This repository contains my coursework for CP363 (Database Systems & Design) at Wilfrid Laurier University. The project implements a secure banking system with a GUI interface, building upon the database schemas and SQL code developed throughout the course assignments.
+
+## Project Structure
+
+The project is organized by assignments and components:
+
+### Database Components
+- `banking_schema_A4.1.sql`: Initial database schema with tables
+- `banking_database_A5.sql`: Extended schema with additional functionality
+- `a6.sql`: Assignment 6 database modifications
+- `a7_tables.sql`: Assignment 7 table structures
+- `a8.sql`: Assignment 8 final database implementation
+
+### Application Components
+- `banking_gui.py`: GUI implementation using Python/tkinter
+- `security.py`: Security implementation and authentication
+- `config.py`: Configuration management
+- `requirements.txt`: Python package dependencies
 
 ## Features
 
@@ -9,18 +26,31 @@ This is a Python-based GUI application for managing a banking system. The applic
 - Transaction History
 - Loan Management
 - Financial Reports
+- Secure Authentication
 
-## Prerequisites
+## Database Design
 
-- Python 3.6 or higher
-- MySQL Server
-- MySQL Connector for Python
+The database is designed following database normalization principles:
+- Third Normal Form (3NF)
+- Boyce-Codd Normal Form (BCNF)
+- Proper foreign key relationships
+- Index optimization
+
+## Security Implementation
+
+This implementation includes several security measures:
+- Password hashing with salt
+- Input sanitization to prevent SQL injection
+- Session timeout
+- Login attempt limiting
+- Environment variable-based configuration
+- Secure password requirements
 
 ## Setup Instructions
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/banking-system.git
+   git clone <your-repository-url>
    cd banking-system
    ```
 
@@ -43,32 +73,47 @@ This is a Python-based GUI application for managing a banking system. The applic
 
 5. Set up the database:
    - Create a MySQL database named `BankingSystem4`
-   - Run the provided SQL scripts to create the required tables
+   - Run the SQL scripts in order:
+     1. `banking_schema_A4.1.sql`
+     2. `banking_database_A5.sql`
+     3. `a6.sql`
+     4. `a7_tables.sql`
+     5. `a8.sql`
 
 6. Run the application:
    ```bash
    python banking_gui.py
    ```
 
+## Development Notes
+
+- Built with Python 3.8+
+- Uses MySQL for database management
+- Implements secure coding practices
+- Follows object-oriented design principles
+
 ## Security Best Practices
 
 1. Never commit the `.env` file to version control
 2. Use strong passwords for database access
 3. Regularly update the password salt in production
-4. Keep your Python packages up to date
+4. Keep Python packages up to date
 5. Use HTTPS in production environments
-6. Implement proper backup procedures for the database
+6. Implement proper backup procedures
 
-## Development
+## Course Information
 
-- The application uses Python 3.8+
-- Dependencies are managed through `requirements.txt`
-- Environment variables are managed through `.env`
-- Database credentials are never stored in the code
+- Course: CP363 Database Systems & Design
+- Institution: Wilfrid Laurier University
+- Term: Winter 2024
 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+Database schema design inspired by course materials and assignments from CP363 at Wilfrid Laurier University.
 
 ## Database Normalization
 
