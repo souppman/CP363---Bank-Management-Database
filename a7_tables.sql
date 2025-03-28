@@ -94,7 +94,7 @@ CREATE TABLE Transactions (
 );
 
 -- ===========================
--- CARD TABLE (MODIFIED FOR 3NF)
+-- CARD TABLE (CHANGED FOR 3NF)
 -- ===========================
 
 /*
@@ -201,7 +201,7 @@ CREATE TABLE LoanType (
 );
 
 -- ===========================
--- LOAN TABLE (MODIFIED FOR 3NF)
+-- LOAN TABLE (CHANGED FOR 3NF)
 -- ===========================
 
 /*

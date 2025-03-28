@@ -1,79 +1,119 @@
-# CP363 - Bank Management Database
+# Banking System GUI Application
 
-This repository contains the database schemas and SQL code for the CP363 Banking System project, organized by assignments.
+This is a Python-based GUI application for managing a banking system. The application provides a user-friendly interface for managing customers, accounts, transactions, loans, and generating reports.
 
-## Repository Structure
+## Features
 
-- `banking_schemaA4.sql`: Assignment 4 - Initial database schema with tables, sample data, and queries
-- `banking_schema_A4.1.sql`: Assignment 4.1 - Extended schema with additional test data and complex queries
-- Future assignments will be added as separate SQL files (e.g., `banking_schemaA5.sql`)
+- Customer Management
+- Account Operations
+- Transaction History
+- Loan Management
+- Financial Reports
 
-## Getting Started
+## Prerequisites
 
-### Prerequisites
-- Git installed on your computer
-- MySQL or compatible database management system
-- A code editor (e.g., VSCode, MySQL Workbench)
+- Python 3.6 or higher
+- MySQL Server
+- MySQL Connector for Python
 
-### Cloning the Repository
+## Setup Instructions
 
-1. Open your terminal
-2. Navigate to where you want to store the project
-3. Run the following command:
-```bash
-git clone https://github.com/souppman/CP363---Bank-Management-Database.git
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/banking-system.git
+   cd banking-system
+   ```
 
-### Basic Git Commands
+2. Create and activate a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
 
-Here are some essential Git commands you'll need:
+3. Install required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-1. Get the latest updates:
-```bash
-git pull origin main
-```
+4. Set up environment variables:
+   ```bash
+   cp .env.example .env
+   ```
+   Edit the `.env` file with your database credentials and security settings.
 
-2. Check status of your changes:
-```bash
-git status
-```
+5. Set up the database:
+   - Create a MySQL database named `BankingSystem4`
+   - Run the provided SQL scripts to create the required tables
 
-3. Add your changes:
-```bash
-git add filename.sql    # For a specific file
-git add .              # For all changes
-```
+6. Run the application:
+   ```bash
+   python banking_gui.py
+   ```
 
-4. Commit your changes:
-```bash
-git commit -m "Description of your changes"
-```
+## Security Best Practices
 
-5. Push your changes:
-```bash
-git push origin main
-```
+1. Never commit the `.env` file to version control
+2. Use strong passwords for database access
+3. Regularly update the password salt in production
+4. Keep your Python packages up to date
+5. Use HTTPS in production environments
+6. Implement proper backup procedures for the database
 
-### Working on Assignments
+## Development
 
-1. Always pull the latest changes before starting work:
-```bash
-git pull origin main
-```
+- The application uses Python 3.8+
+- Dependencies are managed through `requirements.txt`
+- Environment variables are managed through `.env`
+- Database credentials are never stored in the code
 
-2. Create/edit the appropriate SQL file for your assignment
-3. Test your SQL code locally
-4. Commit and push your changes using the commands above
+## License
 
-## Best Practices
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-1. Always pull before starting new work
-2. Test SQL code locally before committing
-3. Use clear commit messages describing your changes
-4. Push your changes regularly to avoid conflicts
+## Database Normalization
 
-## Need Help?
+The database is normalized to Boyce-Codd Normal Form (BCNF), ensuring:
+- No redundant data
+- Data integrity
+- Efficient storage
+- Proper relationships between tables
 
-If you encounter any issues:
-1. Check your Git commands
-2. Make sure you have the latest version (`git pull`)
+## Special Cases and Advanced Reports
+
+The application includes several advanced features:
+
+1. Customer Financial Summary:
+   - Shows total balance across all accounts
+   - Displays active loans
+   - Lists insurance products
+   - Sorted by total balance
+
+2. Transaction History:
+   - Chronological view of all transactions
+   - Includes transaction type, amount, and description
+   - Links transactions to customer accounts
+
+3. Loan Management:
+   - Shows loan status and interest rates
+   - Displays loan types and amounts
+   - Tracks active vs. closed loans
+
+4. Account Operations:
+   - Displays account types (Chequing, Saving, TFSA, etc.)
+   - Shows current balances
+   - Links accounts to customers
+
+## Error Handling
+
+The application includes comprehensive error handling for:
+- Database connection issues
+- Query execution errors
+- Invalid data entry
+- Missing records
+
+## Security Considerations
+
+- Database credentials should be stored securely
+- User input is validated before processing
+- SQL injection prevention through parameterized queries
+- Proper error messages without exposing sensitive information
